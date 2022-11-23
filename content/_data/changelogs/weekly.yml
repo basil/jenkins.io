@@ -18377,30 +18377,21 @@
     date: 2022-11-22
     changes:
       - type: rfe
-        category: rfe
-        pull: 7312
+        category: developer
+        pull: 7398
         authors:
           - basil
-          - daniel-beck
-        pr_title: Remove Commons HttpClient 3.x
-        references:
-          - url: https://github.com/jenkinsci/lib-commons-httpclient
-            title: Jenkins patched HttpClient library
-          - url: https://hc.apache.org/httpclient-legacy/
-            title: Commons HttpClient 3.x
+        pr_title: Introduce a high-level HTTP client API
         message: |-
-          Jenkins no longer bundles a patched version of the deprecated Commons HttpClient 3.x library for use by plugins.
-          Plugins should be migrated to the native Java 11 HTTP client or updated to depend on the legacy Commons HttpClient 3.x API plugin.
-      - type: rfe
-        category: rfe
-        pull: 7376
-        issue: 64151
+          Developer: Introduce a high-level HTTP client API.
+      - type: TODO
+        category: developer
+        pull: 7391
         authors:
-          - Dohbedoh
-          - NotMyFault
-        pr_title: "[JENKINS-64151] Set a default file size rotation of AsyncPeriodicWork…"
+          - dependabot[bot]
+        pr_title: Upgrade Spring Framework from 5.3.23 to 5.3.24
         message: |-
-          Set default file size rotation of AsyncPeriodicWork / AsyncAperiodicWork task logs.
+          Upgrade Spring Framework from 5.3.23 to 5.3.24. Spring Framework 5.3.24 includes [33 fixes and improvements](https://github.com/spring-projects/spring-framework/releases/tag/v5.3.24).
       - type: rfe
         category: rfe
         pull: 7414
@@ -18409,7 +18400,26 @@
           - NotMyFault
         pr_title: Remove WMI Windows Agents plugin from setup wizard
         message: |-
-          Remove the deprecated WMI Windows Agents plugin from the setup wizard.
+          Remove WMI Windows Agents plugin from setup wizard.
+      - type: rfe
+        category: rfe
+        pull: 7312
+        authors:
+          - basil
+          - daniel-beck
+        pr_title: Remove Commons HttpClient 3.x
+        message: |-
+          Jenkins no longer bundles a [patched version](https://github.com/jenkinsci/lib-commons-httpclient) of the deprecated [Commons HttpClient 3.x](https://hc.apache.org/httpclient-legacy/) library for use by plugins. Plugins should be migrated to the native Java 11 HTTP client or updated to depend on the legacy Commons HttpClient 3.x API plugin.
+      - type: rfe
+        category: rfe
+        pull: 7376
+        issue: 64151
+        authors:
+          - Dohbedoh
+          - NotMyFault
+        pr_title: '[JENKINS-64151] Set a default file size rotation of AsyncPeriodicWork…'
+        message: |-
+          Set default file size rotation of AsyncPeriodicWork / AsyncAperiodicWork task logs.
       - type: rfe
         category: rfe
         pull: 7413
@@ -18434,17 +18444,16 @@
         pr_title: Add a "copy to clipboard" button to agent and controller thread
           dumps
         message: |-
-          Add a "copy to clipboard" button to controller and agent thread dump pages.
-          Remove the side panel from controller thread dumps.
+          Add a "copy to clipboard" button to controller and agent thread dump pages. Remove the side panel from controller thread dumps.
       - type: bug
         category: regression
         pull: 7399
         issue: 70036
         authors:
-          - benebsiny
-        pr_title: "[JENKINS-70036] Weird animation artifacts in admin monitor popup"
+          - 'TODO: benebsiny (stu995106@hotmail.com)'
+        pr_title: '[JENKINS-70036] Weird animation artifacts in admin monitor popup'
         message: |-
-          Fix the animation of the popup dialog in the admin monitor.
+          Fix the animation of the pop-up dialog in the admin monitor.
       - type: bug
         category: bug
         pull: 7412
@@ -18452,8 +18461,8 @@
         authors:
           - jglick
           - basil
-        pr_title: "[JENKINS-70103] `WeakHashMap` broken for looking up Jetty `Session`\
-          \ in WebSocket response"
+        pr_title: '[JENKINS-70103] `WeakHashMap` broken for looking up Jetty `Session`
+          in WebSocket response'
         message: |-
           Memory leak when repeatedly connecting WebSocket agents.
       - type: bug
@@ -18462,13 +18471,10 @@
         issue: 70105
         authors:
           - dependabot[bot]
-        pr_title: "[JENKINS-70105] Slow down WebSocket reconnect logic when the controller\
-          \ is responding"
-        references:
-          - url: https://github.com/jenkinsci/remoting/pull/603
-            title: Pull request 603
+        pr_title: '[JENKINS-70105] Slow down WebSocket reconnect logic when the controller
+          is responding'
         message: |-
-          Wait for 10 seconds before attempting to reconnect a WebSocket agent regardless of whether or not the controller is responding.
+          Wait for 10 seconds before attempting to reconnect a WebSocket agent regardless of whether or not the controller is responding. (jenkinsci/remoting#603)
       - type: bug
         category: bug
         pull: 7378
@@ -18477,26 +18483,6 @@
         pr_title: Synchronize agent protocol access
         message: |-
           Fix a race condition affecting the launch of inbound agents.
-      - type: rfe
-        category: developer
-        pull: 7398
-        authors:
-          - basil
-        pr_title: Introduce a high-level HTTP client API
-        message: |-
-          Developer: Introduce a high level HTTP client API.
-      - type: rfe
-        category: developer
-        pull: 7391
-        authors:
-          - dependabot[bot]
-        pr_title: Upgrade Spring Framework from 5.3.23 to 5.3.24
-        references:
-          - url: https://github.com/spring-projects/spring-framework/releases/tag/v5.3.24
-            title: Spring Framework 5.3.24
-        message: |-
-          Upgrade Spring Framework from 5.3.23 to 5.3.24.
-          Spring Framework 5.3.24 includes 33 fixes and improvements.
 
   # pull: 7374 (PR title: Removed obsolete browser workarounds for `user-select` in `layout-mixins.less`)
   # pull: 7375 (PR title: Update dependency postcss to v8.4.19)
